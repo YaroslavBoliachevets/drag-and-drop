@@ -9,13 +9,17 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/drag-and-drop/',
+  build: {
+    outDir: 'dist',
+  },
   server: {
     hmr: {
       protocol: 'ws', // WebSocket для HMR
       host: 'localhost',
     },
     watch: {
-      usePolling: true, // Если HMR не работает, иногда нужно для Windows
+      usePolling: true,
     },
   },
   // cacheDir: false,
